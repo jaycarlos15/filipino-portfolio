@@ -5,7 +5,7 @@ document.addEventListener('scroll', function () {
         sh = 'scrollHeight';
 
     var percent = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
-    var adjPercent = percent * 2.5 - 150;
+    var adjPercent = percent * 5 - 200;
 
     getComputedStyle(document.documentElement);
 
@@ -16,7 +16,7 @@ document.addEventListener('scroll', function () {
     // if (darkMode.matches) checks the css media query and adjusts the colors
     if (percent <= 15) {
         if (darkMode.matches) {
-            pageLabel[0].style.color = 'rgb(135, 135, 190)';
+            document.getElementsByClassName("pageLabel")[0].style.color = 'rgb(135, 135, 190)';
             document.getElementsByClassName("pageLabel")[1].style.color = 'rgb(105, 105, 125)';
             document.getElementsByClassName("pageLabel")[2].style.color = 'rgb(105, 105, 125)';
             document.getElementsByClassName("pageLabel")[3].style.color = 'rgb(105, 105, 125)';
