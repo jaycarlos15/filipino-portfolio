@@ -11,10 +11,8 @@
 }
 
 html, body {
-    background-color: var(--mainBG);
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
-    color: var(--mainFG);
     transition: background-color 1s, color 1s;
     scroll-behavior: smooth;
     user-select: none;
@@ -24,9 +22,7 @@ html, body {
 
 a {
     text-decoration: none;
-    color: var(--subFG);
     font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
-    transition: color 0.25s;
 }
 
 
@@ -36,7 +32,6 @@ a {
 }
 
 .subtitle {
-    color: var(--subFG);
     font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
 }
 
@@ -59,7 +54,6 @@ a {
 
 .credits {
     width: 60%;
-    color: var(--subFG);
     font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
     text-align: left;
     font-size: smaller;
@@ -80,13 +74,7 @@ a {
 
 .pageLabel {
     letter-spacing: 2px;
-    color: var(--subFG);
     font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
-    transition: color 0.25s;
-}
-
-a:hover {
-    color: var(--mainAccent);
 }
 
 #sidebar {
@@ -114,8 +102,11 @@ a:hover {
     flex-direction: row wrap;
     align-items: center;
     justify-content: space-evenly;
-    transition: background-color 1s, color 0.25s;
-    background-color: var(--mainBG);
+    transition: background-color 1s, color 1s;
+}
+
+.en {
+    display: none;
 }
 
 #darkMode {
@@ -132,9 +123,18 @@ a:hover {
     transition: margin 0.25s;
 }
 
-#translate > .funImage {
+#translate {
+    display: flex;
+    flex-direction: column;
+    height: 3em;
+    overflow-y: hidden;
+    cursor: pointer;
+}
+
+#filtoen, #entofil {
     width: 3em;
     height: auto;
+    transition: margin 0.25s;
 }
 
 .separator {

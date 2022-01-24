@@ -1,0 +1,20 @@
+html, body {
+    background-color: var(--mainBG);
+    color: var(--mainFG);
+}
+
+.subtitle {
+    color: var(--subFG);
+}
+
+a, .pageLabel, .credits {
+    color: var(--subFG);
+}
+
+a:hover {
+   color: var(--mainAccent);
+}
+
+#funstuff {
+    background-color: var(--mainBG);
+}

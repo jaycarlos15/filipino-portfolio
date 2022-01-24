@@ -14,6 +14,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="dark.css">
+        <link rel="stylesheet" href="light.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Roboto+Mono&display=swap" rel="stylesheet">
@@ -29,9 +30,9 @@
                 <img class="separator" src="/assets/verticalLine.svg" />
                 <a href="#page2"> <h6 class="pageLabel"> // BIONOTE </h6> </a>
                 <img class="separator" src="/assets/verticalLine.svg" />
-                <a href="#page3"><h6 class="pageLabel"> // MGA DOKUMENTO </h6>
+                <a href="#page3"><h6 class="pageLabel fil"> // MGA DOKUMENTO </h6>
                 <img class="separator" src="/assets/verticalLine.svg" />
-                <a href="#page4"> <h6 class="pageLabel"> // REPLEKSYON </h6> </a>
+                <a href="#page4"> <h6 class="pageLabel fil"> // REPLEKSYON </h6> </a>
             </div>
 
             <div id="funstuff">
@@ -40,16 +41,18 @@
                     <img id="moonImage" src="/assets/moonicon.svg" />
                 </div>
                 <img class="separator" src="/assets/verticalLine.svg" />
-                <div id="translate">
-                    <img class="funImage" src="/assets/filtoen.svg" />
+                <div id="translate" onclick=langToggle()>
+                    <img id="filtoen" src="/assets/filtoen.svg" />
+                    <img id="entofil" src="/assets/entofil.svg" />
                 </div>
             </div>
         </div>
         <div class="container" id="page1">
             <div class="greeting">
                 <h1 class="header"> hello. </h1>
-                <p class="subtitle" id="myName"> ako si jay carlos. </p>
-                <p> Sa webpage na ito, makikita mo ang mga akademikong pagsusulat na ginawa ko noong pangalawang termino ng Filipino sa A.Y. 2021-2022 at ang aking repleksyon sa ginawa namin sa terminong ito. Sa pinakababa ang aking bionote. </p>
+                <p class="subtitle fil" id="myName"> ako si jay carlos. </p>
+                <p class="fil"> Sa webpage na ito, makikita mo ang mga akademikong pagsusulat na ginawa ko noong pangalawang termino ng Filipino sa A.Y. 2021-2022 at ang aking repleksyon sa ginawa namin sa terminong ito. Sa pinakababa ang aking bionote. </p>
+                <p class="en"> In this webpage, you can see all the academic papers that I've done for the second term of my Filipino class for A.Y. 2021-2022 and my reflection on the things that we did this term. At the bottom is my bionote </p>
             </div>
         </div>
         <div class="container" id="page2">

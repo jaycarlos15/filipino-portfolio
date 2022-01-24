@@ -1,29 +1,77 @@
+/* 
+ *  dynamic toggleable dark mode by jay carlos
+ */
+
+
 var darkMode = window.matchMedia("(prefers-color-scheme: dark)");
 var pageIsDark;
 
 if (darkMode.matches) {
+    // if system is dark, turn pageIsDark to true and move the sun image down
     pageIsDark = true;
     document.getElementById('sunImage').style.marginTop = '0';
+    // enable dark.css and disable light.css
+    document.getElementsByTagName('link')[1].disabled = false;
+    document.getElementsByTagName('link')[2].disabled = true;
 } else {
+    // if system is light, turn pageIsDark to false and move the sun image up
     pageIsDark = false;
     document.getElementById('sunImage').style.marginTop = '-1.5em';
+    // disable dark.css and enable light.css
+    document.getElementsByTagName('link')[1].disabled = true;
+    document.getElementsByTagName('link')[2].disabled = false;
 }
 
 function darkModeToggle() {
     if (pageIsDark == true) {
         document.getElementsByTagName('link')[1].disabled = true;
+        document.getElementsByTagName('link')[2].disabled = false;
         pageIsDark = false;
         document.getElementById('sunImage').style.marginTop = '-1.5em';
     } else {
         document.getElementsByTagName('link')[1].disabled = false;
+        document.getElementsByTagName('link')[2].disabled = true;
         pageIsDark = true;
         document.getElementById('sunImage').style.marginTop = '0';
     }
 }
 
-console.log(pageIsDark);
+
+/*
+ *  filipino-english translation thanks to stackoverflow
+ */
 
 
+var languageMode = 'fil';
+var en = document.getElementsByClassName('en');
+var fil = document.getElementsByClassName('fil');
+
+var index = 0,
+    enLength = en.length,
+    filLength = fil.length;
+
+function langToggle() {
+    if (languageMode == 'fil') {
+        languageMode = 'en';
+        document.querySelectorAll('fil').forEach(el => el.style.display = 'none');
+        document.querySelectorAll('en').forEach(el => el.style.display = 'block');
+        document.getElementById('filtoen').style.marginTop = '-3em';
+    } else {
+        languageMode = 'fil';
+        document.querySelectorAll('fil').forEach(el => el.style.display = 'block');
+        document.querySelectorAll('en').forEach(el => el.style.display = 'none');
+        document.getElementById('filtoen').style.marginTop = '0';
+    }
+    console.log("[" + languageMode + "]" + "   These items were changed: " + JSON.stringify(en) + JSON.stringify(fil));
+}
+    
+    
+/*
+ *  scroll percentage detection thanks in part to the lovely folks at
+ *  stackoverflow ;)
+ */
+    
+    
 document.addEventListener('scroll', function () {
     var h = document.documentElement, 
         b = document.body,
