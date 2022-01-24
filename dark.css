@@ -1,0 +1,22 @@
+@media (prefers-color-scheme: dark) {
+    html, body {
+        background-color: var(--darkBG);
+        color: var(--darkFG);
+    }
+
+    .subtitle {
+        color: var(--darkSubFG);
+    }
+
+    a, .pageLabel, .credits {
+        color: var(--darkSubFG);
+    }
+
+    a:hover {
+       color: var(--darkAccent);
+   }
+   
+   #funstuff {
+        background-color: var(--darkBG);
+   }
+}

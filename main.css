@@ -18,7 +18,7 @@ html, body {
     transition: background-color 1s, color 1s;
     scroll-behavior: smooth;
     user-select: none;
-    max-width: 1920px;
+    max-width: 23in;
     margin: 0 auto;
 }
 
@@ -53,7 +53,7 @@ a {
     animation: fadeIn 1.5s;
 }
 
-#page1 > .greeting > .header, #page1 > .greeting > #scroll {
+#page1 > .greeting > .header {
     line-height: 0;
 }
 
@@ -93,7 +93,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: column wrap;
     height: 100vh;
     width: 25%;
     min-width: 300px;
@@ -101,6 +101,40 @@ a:hover {
     float: left;
     position: fixed;
     animation: sidebarSlideIn 0.5s;
+}
+
+#funstuff {
+    width: 100%;
+    height: 10%;
+    max-height: 2em;
+    min-height: 100px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: background-color 1s, color 0.25s;
+    background-color: var(--mainBG);
+}
+
+#darkMode {
+    display: flex;
+    flex-direction: column;
+    height: 1.5em;
+    overflow-y: hidden;
+    cursor: pointer;
+}
+
+#sunImage, #moonImage {
+    width: 1.5em;
+    height: auto;
+    transition: margin 0.25s;
+}
+
+#translate > .funImage {
+    width: 3em;
+    height: auto;
 }
 
 .separator {
@@ -134,65 +168,3 @@ a:hover {
         margin-left: 0;
     }
 }
-
-@keyframes typewriter {
-    0% {
-        content: 'k';
-    }
-
-    14% {
-        content: 'ka';
-    }
-
-    28% {
-        content: 'kam';
-    }
-
-    42% {
-        content: 'kamu';
-    }
-
-    56% {
-        content: 'kamus';
-    }
-
-    70% {
-        content: 'kamust';
-    }
-
-    84% {
-        content: 'kamusta';
-    }
-
-    96% {
-        content: 'kamusta.';
-    }
-}
-
-
-
-/* 
- *   dark mode
- */
-
-
-
- @media (prefers-color-scheme: dark) {
-     html, body {
-         background-color: var(--darkBG);
-         color: var(--darkFG);
-     }
-
-     .subtitle {
-         color: var(--darkSubFG);
-     }
-
-     a, .pageLabel, .credits {
-         color: var(--darkSubFG);
-     }
-
-     a:hover {
-        color: var(--darkAccent);
-    }
-    
- }
