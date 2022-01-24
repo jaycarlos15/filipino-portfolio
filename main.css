@@ -6,7 +6,8 @@
 
     --darkBG: rgb(20, 20, 30);
     --darkFG: rgb(225, 225, 235);
-    --darkSubFG: rgb(145, 145, 165);
+    --darkSubFG: rgb(105, 105, 125);
+    --darkAccent: rgb(135, 135, 190);
 }
 
 html, body {
@@ -17,6 +18,8 @@ html, body {
     transition: background-color 1s, color 1s;
     scroll-behavior: smooth;
     user-select: none;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 a {
@@ -26,12 +29,10 @@ a {
     transition: color 0.25s;
 }
 
-.greeting > h4 {
-    line-height: 50%;
-}
 
 .header {
     font-size: larger;
+    letter-spacing: -1px;
 }
 
 .subtitle {
@@ -39,15 +40,22 @@ a {
     font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
 }
 
+.frontPage::before {
+    opacity: 0;
+}
+
 .frontPage {
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: row;
-    width: 70vw;
+    width: 70%;
+    max-height: 1600px;
+    min-width: 800px;
     height: 90vh;
-    padding: 5vh 5vw 5vh 5vw;
+    padding: 5% 5% 5% 5%;
     float: right;
+    animation: fadeIn 1.5s;
 }
 
 .greeting {
@@ -55,19 +63,21 @@ a {
     margin: 0 auto;
 }
 
+.frontPage > .greeting {
+    line-height: 0.5;
+}
+
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 70vw;
+    width: 70%;
     height: 90vh;
-    padding: 5vh 5vw 5vh 5vw;
+    max-height: 1600px;
+    min-height: 800px;
+    padding: 5% 5% 5% 5%;
     float: right;
-}
-
-#myName {
-    margin-top: -1em;
 }
 
 .pageLabel {
@@ -87,17 +97,39 @@ a:hover {
     justify-content: center;
     flex-direction: column;
     height: 100vh;
-    width: 20vw;
+    width: 20%;
+    min-width: 300px;
+    max-width: 400px;
     float: left;
     position: fixed;
+    animation: sidebarSlideIn 0.5s;
 }
 
 #sidebarContainer {
     width: 60%;
+    margin-bottom: -150px;
 }
 
-#sidebarContainer:first-child() {
-    color: var(--mainAccent);
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes sidebarSlideIn {
+    0% {
+        opacity: 0;
+        margin-left: -40px;
+    }
+
+    100% {
+        opacity: 1;
+        margin-left: 0;
+    }
 }
 
 
