@@ -10,20 +10,21 @@ document.addEventListener('scroll', function () {
     getComputedStyle(document.documentElement);
 
     var darkMode = window.matchMedia("(prefers-color-scheme: dark)");
+    var pageLabel = 'document.getElementsByClassName("pageLabel")';
 
     // checks the percentage scrolled and modifies the sidebar text accordingly
     // if (darkMode.matches) checks the css media query and adjusts the colors
     if (percent <= 15) {
         if (darkMode.matches) {
-            document.getElementsByClassName("pageLabel")[0].style.color = 'rgb(135, 135, 190)';
+            pageLabel[0].style.color = 'rgb(135, 135, 190)';
             document.getElementsByClassName("pageLabel")[1].style.color = 'rgb(105, 105, 125)';
             document.getElementsByClassName("pageLabel")[2].style.color = 'rgb(105, 105, 125)';
             document.getElementsByClassName("pageLabel")[3].style.color = 'rgb(105, 105, 125)';
         } else {
             document.getElementsByClassName("pageLabel")[0].style.color = 'rgb(100, 100, 180)';
-            document.getElementsByClassName("pageLabel")[1].style.color = 'rgb(80, 80, 90)';
-            document.getElementsByClassName("pageLabel")[2].style.color = 'rgb(80, 80, 90)';
-            document.getElementsByClassName("pageLabel")[3].style.color = 'rgb(80, 80, 90)';
+            document.getElementsByClassName("pageLabel")[1].style.color = 'rgb(120, 120, 140)';
+            document.getElementsByClassName("pageLabel")[2].style.color = 'rgb(120, 120, 140)';
+            document.getElementsByClassName("pageLabel")[3].style.color = 'rgb(120, 120, 140';
         }
 
         document.getElementsByClassName("pageLabel")[0].innerHTML = '· // WELCOME';
@@ -37,10 +38,10 @@ document.addEventListener('scroll', function () {
             document.getElementsByClassName("pageLabel")[2].style.color = 'rgb(105, 105, 125)';
             document.getElementsByClassName("pageLabel")[3].style.color = 'rgb(105, 105, 125)';
         } else {
-            document.getElementsByClassName("pageLabel")[0].style.color = 'rgb(80, 80, 90)';
+            document.getElementsByClassName("pageLabel")[0].style.color = 'rgb(120, 120, 140)';
             document.getElementsByClassName("pageLabel")[1].style.color = 'rgb(100, 100, 180)';
-            document.getElementsByClassName("pageLabel")[2].style.color = 'rgb(80, 80, 90)';
-            document.getElementsByClassName("pageLabel")[3].style.color = 'rgb(80, 80, 90)';   
+            document.getElementsByClassName("pageLabel")[2].style.color = 'rgb(120, 120, 140)';
+            document.getElementsByClassName("pageLabel")[3].style.color = 'rgb(120, 120, 140)';   
         }
 
         document.getElementsByClassName("pageLabel")[0].innerHTML = '// WELCOME';
@@ -54,10 +55,10 @@ document.addEventListener('scroll', function () {
             document.getElementsByClassName("pageLabel")[2].style.color = 'rgb(135, 135, 190)';
             document.getElementsByClassName("pageLabel")[3].style.color = 'rgb(105, 105, 125)';
         } else {
-            document.getElementsByClassName("pageLabel")[0].style.color = 'rgb(80, 80, 90)';
-            document.getElementsByClassName("pageLabel")[1].style.color = 'rgb(80, 80, 90)';
+            document.getElementsByClassName("pageLabel")[0].style.color = 'rgb(120, 120, 140)';
+            document.getElementsByClassName("pageLabel")[1].style.color = 'rgb(120, 120, 140)';
             document.getElementsByClassName("pageLabel")[2].style.color = 'rgb(100, 100, 180)';
-            document.getElementsByClassName("pageLabel")[3].style.color = 'rgb(80, 80, 90)';   
+            document.getElementsByClassName("pageLabel")[3].style.color = 'rgb(120, 120, 140)';   
         }
 
         document.getElementsByClassName("pageLabel")[0].innerHTML = '// WELCOME';
@@ -71,9 +72,9 @@ document.addEventListener('scroll', function () {
             document.getElementsByClassName("pageLabel")[2].style.color = 'rgb(105, 105, 125)';
             document.getElementsByClassName("pageLabel")[3].style.color = 'rgb(135, 135, 190)';
         } else {
-            document.getElementsByClassName("pageLabel")[0].style.color = 'rgb(80, 80, 90)';
-            document.getElementsByClassName("pageLabel")[1].style.color = 'rgb(80, 80, 90)';
-            document.getElementsByClassName("pageLabel")[2].style.color = 'rgb(80, 80, 90)';
+            document.getElementsByClassName("pageLabel")[0].style.color = 'rgb(120, 120, 140)';
+            document.getElementsByClassName("pageLabel")[1].style.color = 'rgb(120, 120, 140)';
+            document.getElementsByClassName("pageLabel")[2].style.color = 'rgb(120, 120, 140)';
             document.getElementsByClassName("pageLabel")[3].style.color = 'rgb(100, 100, 180)';
         }
         
@@ -84,5 +85,4 @@ document.addEventListener('scroll', function () {
     }
 
     document.getElementById('sidebarContainer').style.marginBottom = adjPercent + 'px';
-    console.log("scrolled: " + percent);
 });
