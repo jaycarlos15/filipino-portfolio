@@ -1,0 +1,124 @@
+:root {
+    --mainBG: rgb(225, 225, 235);
+    --mainFG: rgb(20, 20, 30);
+    --subFG: rgb(80, 80, 90);
+    --mainAccent: rgb(100, 100, 180);
+
+    --darkBG: rgb(20, 20, 30);
+    --darkFG: rgb(225, 225, 235);
+    --darkSubFG: rgb(145, 145, 165);
+}
+
+html, body {
+    background-color: var(--mainBG);
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    color: var(--mainFG);
+    transition: background-color 1s, color 1s;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--subFG);
+    font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+    transition: color 0.25s;
+}
+
+.greeting > h4 {
+    line-height: 50%;
+}
+
+.header {
+    font-size: larger;
+}
+
+.subtitle {
+    color: var(--subFG);
+    font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+}
+
+.frontPage {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 70vw;
+    height: 90vh;
+    padding: 5vh 5vw 5vh 5vw;
+    float: right;
+}
+
+.greeting {
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 70vw;
+    height: 90vh;
+    padding: 5vh 5vw 5vh 5vw;
+    float: right;
+}
+
+#myName {
+    margin-top: -1em;
+}
+
+.pageLabel {
+    letter-spacing: 2px;
+    color: var(--subFG);
+    font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+    transition: color 0.25s;
+}
+
+a:hover {
+    color: var(--mainAccent);
+}
+
+#sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 20vw;
+    float: left;
+    position: fixed;
+}
+
+#sidebarContainer {
+    width: 60%;
+}
+
+#sidebarContainer:first-child() {
+    color: var(--mainAccent);
+}
+
+
+
+/* 
+ *   dark mode
+ */
+
+
+
+ @media (prefers-color-scheme: dark) {
+     html, body {
+         background-color: var(--darkBG);
+         color: var(--darkFG);
+     }
+
+     .subtitle {
+         color: var(--darkSubFG);
+     }
+
+     a, .pageLabel {
+         color: var(--darkSubFG);
+     }
+ }
