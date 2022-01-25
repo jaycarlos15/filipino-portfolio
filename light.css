@@ -3,7 +3,7 @@ html, body {
     color: var(--mainFG);
 }
 
-a, .pageLabel, .credits, .tooltip, .subtitle {
+a, .pageLabel, .credits, #dmTooltip, .subtitle {
     color: var(--subFG);
 }
 
@@ -11,8 +11,14 @@ a, .pageLabel, .credits, .tooltip, .subtitle {
     color: var(--mainAccent);
 }
 
-#dmTooltip {
-    color: var(--subFG);
+@keyframes blink {
+    0%, 100% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: var(--mainAccent);
+    }
 }
 
 @media only screen and (max-width: 600px) {

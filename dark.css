@@ -3,12 +3,22 @@ html, body {
     color: var(--darkFG);
 }
 
-a, .pageLabel, .credits, .tooltip, .subtitle {
+a, .pageLabel, .credits, #dmTooltip, .subtitle {
     color: var(--darkSubFG);
 }
 
 #funstuff:hover #dmTooltip, a:hover, #slashes {
     color: var(--darkAccent);
+}
+
+@keyframes blink {
+    0%, 100% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: var(--mainAccent);
+    }
 }
 
 @media only screen and (max-width: 600px) {
