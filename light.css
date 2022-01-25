@@ -7,11 +7,7 @@ a, .pageLabel, .credits, .tooltip, .subtitle {
     color: var(--subFG);
 }
 
-a:hover {
-   color: var(--mainAccent);
-}
-
-#funstuff:hover #dmTooltip {
+#funstuff:hover #dmTooltip, a:hover, #slashes {
     color: var(--mainAccent);
 }
 
@@ -25,6 +21,6 @@ a:hover {
     }
 
     #sidebar {
-        background-color: rgba(225, 225, 235, 0.3);
+        background-color: rgba(225, 225, 235, 0.9);
     }
 }
