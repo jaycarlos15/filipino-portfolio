@@ -114,7 +114,6 @@ a {
     align-self: flex-start;
     flex-direction: row nowrap;
     align-items: center;
-    justify-content: center;
     transition: background-color 1s, color 0.25s;
     cursor: pointer;
 }
@@ -136,14 +135,14 @@ a {
 #darkMode {
     display: inline-flex;
     flex-direction: column;
-    height: 1.5em;
-    width: 1.5em;
+    height: 1em;
+    width: 1em;
     overflow-y: hidden;
 }
 
 #sunImage, #moonImage {
-    width: 1.5em;
-    height: 1.5em;
+    width: 1em;
+    height: 1em;
     transition: margin 0.25s;
 }
 
@@ -259,6 +258,7 @@ a {
      #funstuff {
          background: none !important;
          min-height: 100px;
+         justify-content: center;
      }
  }
 
@@ -268,7 +268,7 @@ a {
     }
  }
 
- @media only screen and (max-height: 700px) {
+ @media only screen and (max-height: 700px) and (orientation: landscape) {
      #sidebarContainer {
          margin-bottom: 0 !important;
      }

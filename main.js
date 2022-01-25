@@ -17,7 +17,7 @@ if (darkMode.matches) {
 } else {
     // if system is light, turn pageIsDark to false and move the sun image up
     pageIsDark = false;
-    document.getElementById('sunImage').style.marginTop = '-1.5em';
+    document.getElementById('sunImage').style.marginTop = '-1em';
     // disable dark.css and enable light.css
     document.getElementsByTagName('link')[1].disabled = true;
     document.getElementsByTagName('link')[2].disabled = false;
@@ -29,7 +29,7 @@ function darkModeToggle() {
         document.getElementsByTagName('link')[1].disabled = true;
         document.getElementsByTagName('link')[2].disabled = false;
         pageIsDark = false;
-        document.getElementById('sunImage').style.marginTop = '-1.5em';
+        document.getElementById('sunImage').style.marginTop = '-1em';
         document.getElementById('dmTooltip').innerHTML = 'DARK MODE';
     } else {
         document.getElementsByTagName('link')[1].disabled = false;
