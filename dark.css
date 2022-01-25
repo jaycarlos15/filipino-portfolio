@@ -11,10 +11,6 @@ a:hover {
     color: var(--darkAccent);
 }
 
-#funstuff {
-    background-color: var(--darkBG);
-}
-
 #funstuff:hover #dmTooltip {
     color: var(--darkAccent);
 }

@@ -25,6 +25,10 @@ a {
     font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
 }
 
+a:hover, .pageLabel:hover {
+    text-decoration: underline;
+}
+
 
 .header {
     font-size: larger;
@@ -84,10 +88,6 @@ a {
     font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
 }
 
-.pageLabel:hover {
-    text-decoration: underline;
-}
-
 #sidebar {
     display: flex;
     align-items: center;
@@ -114,7 +114,6 @@ a {
     align-self: flex-start;
     flex-direction: row nowrap;
     align-items: center;
-    transition: background-color 1s, color 0.25s;
     cursor: pointer;
 }
 
@@ -237,6 +236,11 @@ a {
 
      .pageLabel {
         font-size: 12pt;
+        
+     }
+
+     #dmTooltip {
+        opacity: 0.7;
      }
 
      #mobileNavBar {
@@ -248,6 +252,7 @@ a {
          display: flex;
          align-items: center;
          justify-content: center;
+         cursor: pointer;
      }
 
      .burger {
@@ -278,11 +283,7 @@ a {
     }
  }
 
- @media only screen and (hover: none) {
-    #dmTooltip {
-        opacity: 0.7;
-    }
-    
+ @media only screen and (hover: none) {  
     .pageLabel:hover {
         text-decoration: none;
     }

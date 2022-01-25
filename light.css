@@ -11,10 +11,6 @@ a:hover {
    color: var(--mainAccent);
 }
 
-#funstuff {
-    background-color: var(--mainBG);
-}
-
 #funstuff:hover #dmTooltip {
     color: var(--mainAccent);
 }
