@@ -13,6 +13,7 @@ if (darkMode.matches) {
     // enable dark.css and disable light.css
     document.getElementsByTagName('link')[1].disabled = false;
     document.getElementsByTagName('link')[2].disabled = true;
+    document.getElementById('dmTooltip').innerHTML = 'LIGHT MODE';
 } else {
     // if system is light, turn pageIsDark to false and move the sun image up
     pageIsDark = false;
@@ -20,6 +21,7 @@ if (darkMode.matches) {
     // disable dark.css and enable light.css
     document.getElementsByTagName('link')[1].disabled = true;
     document.getElementsByTagName('link')[2].disabled = false;
+    document.getElementById('dmTooltip').innerHTML = 'DARK MODE';
 }
 
 function darkModeToggle() {
@@ -28,44 +30,17 @@ function darkModeToggle() {
         document.getElementsByTagName('link')[2].disabled = false;
         pageIsDark = false;
         document.getElementById('sunImage').style.marginTop = '-1.5em';
+        document.getElementById('dmTooltip').innerHTML = 'DARK MODE';
     } else {
         document.getElementsByTagName('link')[1].disabled = false;
         document.getElementsByTagName('link')[2].disabled = true;
         pageIsDark = true;
         document.getElementById('sunImage').style.marginTop = '0';
+        document.getElementById('dmTooltip').innerHTML = 'LIGHT MODE';
     }
 }
 
 
-/*
- *  filipino-english translation thanks to stackoverflow
- */
-
-
-var languageMode = 'fil';
-var en = document.getElementsByClassName('en');
-var fil = document.getElementsByClassName('fil');
-
-var index = 0,
-    enLength = en.length,
-    filLength = fil.length;
-
-function langToggle() {
-    if (languageMode == 'fil') {
-        languageMode = 'en';
-        document.querySelectorAll('fil').forEach(el => el.style.display = 'none');
-        document.querySelectorAll('en').forEach(el => el.style.display = 'block');
-        document.getElementById('filtoen').style.marginTop = '-3em';
-    } else {
-        languageMode = 'fil';
-        document.querySelectorAll('fil').forEach(el => el.style.display = 'block');
-        document.querySelectorAll('en').forEach(el => el.style.display = 'none');
-        document.getElementById('filtoen').style.marginTop = '0';
-    }
-    console.log("[" + languageMode + "]" + "   These items were changed: " + JSON.stringify(en) + JSON.stringify(fil));
-}
-    
-    
 /*
  *  scroll percentage detection thanks in part to the lovely folks at
  *  stackoverflow ;)
@@ -159,3 +134,24 @@ document.addEventListener('scroll', function () {
 
     document.getElementById('sidebarContainer').style.marginBottom = adjPercent + 'px';
 });
+
+
+/*
+ *  mobile navbar
+ */
+
+var sidebarVisible = false;
+
+function sidebarToggle() {
+    if (sidebarVisible == false) {
+        sidebarVisible = true;
+        document.getElementById('sidebar').style.opacity = 1;
+        document.getElementById('sidebar').style.zIndex = 1;
+    } else {
+        sidebarVisible = false;
+        document.getElementById('sidebar').style.opacity = 0;
+        document.getElementById('sidebar').style.zIndex = -1;
+    }
+
+    console.log('sidebar is visible: ' + sidebarVisible);
+}

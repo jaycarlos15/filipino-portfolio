@@ -3,11 +3,7 @@ html, body {
     color: var(--darkFG);
 }
 
-.subtitle {
-    color: var(--darkSubFG);
-}
-
-a, .pageLabel, .credits {
+a, .pageLabel, .credits, .tooltip, .subtitle {
     color: var(--darkSubFG);
 }
 
@@ -17,4 +13,18 @@ a:hover {
 
 #funstuff {
     background-color: var(--darkBG);
+}
+
+#funstuff:hover #dmTooltip {
+    color: var(--darkAccent);
+}
+
+@media only screen and (max-width: 600px) {
+    #mobileNavBar {
+        background: var(--darkBG);
+    }
+    
+    #sidebar {
+        background-color: rgba(20, 20, 30, 0.3);
+    }
 }

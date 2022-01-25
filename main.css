@@ -52,6 +52,14 @@ a {
     line-height: 0;
 }
 
+#page2, #page3, #page4 {
+    min-height: 800px;
+}
+
+#page4 .greeting p {
+    text-indent: 40px;
+}
+
 .credits {
     width: 60%;
     font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
@@ -64,10 +72,9 @@ a {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 70%;
+    width: 65%;
     height: 90vh;
-    max-height: 1600px;
-    min-height: 800px;
+    max-height: 3840px;
     padding: 5vh 5%;
     float: right;
 }
@@ -77,12 +84,17 @@ a {
     font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
 }
 
+.pageLabel:hover {
+    text-decoration: underline;
+}
+
 #sidebar {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column wrap;
     height: 100vh;
+    max-height: 2160px;
     width: 25%;
     min-width: 300px;
     max-width: 500px;
@@ -92,34 +104,46 @@ a {
 }
 
 #funstuff {
-    width: 100%;
+    width: 60%;
     height: 10%;
     max-height: 2em;
     min-height: 100px;
     position: absolute;
     bottom: 0;
     display: flex;
-    flex-direction: row wrap;
+    align-self: flex-start;
+    flex-direction: row nowrap;
     align-items: center;
-    justify-content: space-evenly;
-    transition: background-color 1s, color 1s;
+    justify-content: center;
+    transition: background-color 1s, color 0.25s;
+    cursor: pointer;
 }
 
-.en {
-    display: none;
+#dmTooltip {
+    font-size: x-small;
+    margin: 2em;
+    font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+    letter-spacing: 2px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.25s, color 0.25s;
+}
+
+#funstuff:hover #dmTooltip {
+    opacity: 1;
 }
 
 #darkMode {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     height: 1.5em;
+    width: 1.5em;
     overflow-y: hidden;
-    cursor: pointer;
 }
 
 #sunImage, #moonImage {
     width: 1.5em;
-    height: auto;
+    height: 1.5em;
     transition: margin 0.25s;
 }
 
@@ -168,3 +192,98 @@ a {
         margin-left: 0;
     }
 }
+
+
+/*
+ *  breakpoints
+ */
+
+ @media only screen and (max-width: 600px) {
+    .container {
+        width: 100vw;
+        padding: 5vh 0;
+    }
+
+    .greeting, .credits {
+        width: 80%;
+    }
+
+    .credits {
+        padding-bottom: 20vh;
+    }
+
+    #page4 {
+        height: fit-content;
+    }
+
+     #sidebar {
+         width: 100vw;
+         max-width: 600px;
+         backdrop-filter: blur(10px);
+         opacity: 0;
+         z-index: -1;
+         animation: none;
+         transition: opacity 0.25s;
+         padding: none;
+     }
+
+     #sidebarContainer {
+         margin-bottom: 0 !important;
+     }
+
+     .separator {
+        width: 2em;
+        height: auto;
+    }
+
+     .pageLabel {
+        font-size: 12pt;
+     }
+
+     #mobileNavBar {
+         position: fixed;
+         top: 0;
+         z-index: 2;
+         width: 100vw;
+         height: 6vh;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+     }
+
+     .burger {
+         height: 5vh;
+         width: auto;
+     }
+
+     #funstuff {
+         background: none !important;
+         min-height: 100px;
+     }
+ }
+
+ @media only screen and (min-width: 601px) {
+    #mobileNavBar {
+        display: none;
+    }
+ }
+
+ @media only screen and (max-height: 700px) {
+     #sidebarContainer {
+         margin-bottom: 0 !important;
+     }
+
+     #funstuff {
+        display: none;
+    }
+ }
+
+ @media only screen and (hover: none) {
+    #dmTooltip {
+        opacity: 0.7;
+    }
+    
+    .pageLabel:hover {
+        text-decoration: none;
+    }
+ }
