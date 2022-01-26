@@ -163,16 +163,27 @@ document.addEventListener('scroll', function () {
  */
 
 var sidebarVisible = false;
+var sidebar = document.getElementById('sidebar');
+var desktopWidth = window.matchMedia("(min-width: 601px)");
+
+desktopWidth.addEventListener('change', function () {
+    if (desktopWidth.matches) {
+        sidebarVisible = false;
+        sidebar.style.opacity = 1;
+    } else {
+        sidebar.style.opacity = 0;
+    }
+});
 
 function sidebarToggle() {
     if (sidebarVisible == false) {
         sidebarVisible = true;
-        document.getElementById('sidebar').style.opacity = 1;
-        document.getElementById('sidebar').style.zIndex = 1;
+        sidebar.style.opacity = 1;
+        sidebar.style.zIndex = 1;
     } else {
         sidebarVisible = false;
-        document.getElementById('sidebar').style.opacity = 0;
-        document.getElementById('sidebar').style.zIndex = -1;
+        sidebar.style.opacity = 0;
+        sidebar.style.zIndex = -1;
     }
 }
 
