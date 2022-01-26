@@ -62,7 +62,7 @@ document.addEventListener('scroll', function () {
 
     // checks the percentage scrolled and modifies the sidebar text accordingly
     // if (darkMode.matches) checks the css media query and adjusts the colors
-    if (percent <= 15) {
+    if (percent <= 25) {
         if (pageIsDark == true) {
             document.getElementsByClassName("pageLabel")[0].style.color = 'rgb(135, 135, 190)';
             document.getElementsByClassName("pageLabel")[1].style.color = 'rgb(105, 105, 125)';
@@ -79,7 +79,7 @@ document.addEventListener('scroll', function () {
         document.getElementsByClassName("pageLabel")[1].innerHTML = '// BIONOTE';
         document.getElementsByClassName("pageLabel")[2].innerHTML = '// MGA DOKUMENTO';
         document.getElementsByClassName("pageLabel")[3].innerHTML = '// REPLEKSYON';
-    } else if (percent >= 15 && percent <= 50) {
+    } else if (percent >= 25 && percent <= 50) {
         if (pageIsDark == true) {
             document.getElementsByClassName("pageLabel")[0].style.color = 'rgb(105, 105, 125)';
             document.getElementsByClassName("pageLabel")[1].style.color = 'rgb(135, 135, 190)';
