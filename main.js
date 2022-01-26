@@ -79,7 +79,7 @@ document.addEventListener('scroll', function () {
         document.getElementsByClassName("pageLabel")[1].innerHTML = '// BIONOTE';
         document.getElementsByClassName("pageLabel")[2].innerHTML = '// MGA DOKUMENTO';
         document.getElementsByClassName("pageLabel")[3].innerHTML = '// REPLEKSYON';
-    } else if (percent >= 25 && percent <= 50) {
+    } else if (percent >= 25 && percent <= 45) {
         if (pageIsDark == true) {
             document.getElementsByClassName("pageLabel")[0].style.color = 'rgb(105, 105, 125)';
             document.getElementsByClassName("pageLabel")[1].style.color = 'rgb(135, 135, 190)';
@@ -96,7 +96,7 @@ document.addEventListener('scroll', function () {
         document.getElementsByClassName("pageLabel")[1].innerHTML = '· // BIONOTE';
         document.getElementsByClassName("pageLabel")[2].innerHTML = '// MGA DOKUMENTO';
         document.getElementsByClassName("pageLabel")[3].innerHTML = '// REPLEKSYON';
-    } else if (percent >= 50 && percent <= 75) {
+    } else if (percent >= 45 && percent <= 75) {
         if (pageIsDark == true) {
             document.getElementsByClassName("pageLabel")[0].style.color = 'rgb(105, 105, 125)';
             document.getElementsByClassName("pageLabel")[1].style.color = 'rgb(105, 105, 125)';
@@ -135,6 +135,28 @@ document.addEventListener('scroll', function () {
     document.getElementById('sidebarContainer').style.marginBottom = adjPercent + 'px';
 });
 
+document.addEventListener('scroll', function () {
+    var h = document.documentElement, 
+        b = document.body,
+        st = 'scrollTop',
+        sh = 'scrollHeight';
+
+    var percent = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    var image1 = document.getElementById('image1');
+
+    if (percent >= 25 && percent <= 45) {
+        image1.style.opacity = 1;
+        image1.style.bottom = 0;        
+    } else if (percent < 25) {
+        image1.style.opacity = 0;
+        image1.style.bottom = '-5vh';
+    } else {
+        image1.style.opacity = 0;
+        image1.style.bottom = '5vh';
+    }
+
+    console.log('scroll percent: ' + percent);
+});
 
 /*
  *  mobile navbar
@@ -152,6 +174,5 @@ function sidebarToggle() {
         document.getElementById('sidebar').style.opacity = 0;
         document.getElementById('sidebar').style.zIndex = -1;
     }
-
-    console.log('sidebar is visible: ' + sidebarVisible);
 }
+

@@ -57,6 +57,12 @@ a:hover, .pageLabel:hover {
     text-align: left;
 }
 
+#image1 {
+    width: 60%;
+    transition: opacity 0.25s, bottom 0.25s;
+    position: relative;
+}
+
 #page1::before {
     opacity: 0;
 }
@@ -75,8 +81,13 @@ a:hover, .pageLabel:hover {
     min-height: 800px;
 }
 
+#page4 {
+    height: fit-content;
+}
+
 #page4 .greeting p {
     text-indent: 40px;
+    text-align: justify;
 }
 
 .credits {
@@ -243,8 +254,8 @@ a:hover, .pageLabel:hover {
         padding-bottom: 20vh;
     }
 
-    #page4 {
-        height: fit-content;
+    #image1 {
+        width: 100%;
     }
 
      #sidebar {
