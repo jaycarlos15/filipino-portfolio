@@ -61,6 +61,7 @@ a:hover, .pageLabel:hover {
     width: 60%;
     transition: opacity 0.25s, bottom 0.25s;
     position: relative;
+    border-radius: 4px;
 }
 
 #page1::before {
@@ -260,6 +261,7 @@ a:hover, .pageLabel:hover {
      #sidebar {
          width: 100vw;
          max-width: 600px;
+         top: -40px;
          backdrop-filter: blur(10px);
          -webkit-backdrop-filter: blur(10px);
          opacity: 0;
@@ -267,7 +269,7 @@ a:hover, .pageLabel:hover {
          animation: none;
          -webkit-animation: none;
          -moz-animation: none;
-         transition: opacity 0.25s;
+         transition: opacity 0.25s, background-color 1s, color 1s;
          -webkit-transition: opacity 0.25s;
          -moz-transition: opacity 0.25s;
          padding: none;
@@ -301,11 +303,27 @@ a:hover, .pageLabel:hover {
          align-items: center;
          justify-content: center;
          cursor: pointer;
+         transition: background-color 1s, color 1s;
      }
 
-     .burger {
-         height: 5vh;
+     #menu {
+         height: 2em;
          width: auto;
+         overflow-y: hidden;
+         display: flex;
+         flex-direction: column;
+     }
+
+     #burger {
+         height: 2em;
+         width: auto;
+     }
+
+     #close {
+        height: 2em;
+        width: auto;
+        margin-top: -2em;
+        transition: margin-top 0.25s;
      }
 
      #funstuff {
