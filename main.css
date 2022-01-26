@@ -21,6 +21,7 @@ html, body {
     transition: background 1s, color 1s;
     -webkit-transition: background 1s, color 1s;
     -moz-transition: background 1s, color 1s;
+    -o-transition: background 1s, color 1s;
 }
 
 a {
@@ -43,6 +44,12 @@ a:hover, .pageLabel:hover {
     overflow: hidden;
     animation: typewriter 2s 1s steps(6, start) infinite alternate,
     blink 1s infinite;
+    -moz-animation: typewriter 2s 1s steps(6, start) infinite alternate,
+    blink 1s infinite;
+    -webkit-animation: typewriter 2s 1s steps(6, start) infinite alternate,
+    blink 1s infinite;
+    -o-animation: typewriter 2s 1s steps(6, start) infinite alternate,
+    blink 1s infinite;
     font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
     font-weight: bold;
     border-right: 2px solid var(--mainAccent);
@@ -60,6 +67,9 @@ a:hover, .pageLabel:hover {
 #image1 {
     width: 60%;
     transition: opacity 0.25s, bottom 0.25s;
+    -moz-transition: opacity 0.25s, bottom 0.25s;
+    -webkit-transition: opacity 0.25s, bottom 0.25s;
+    -o-transition: opacity 0.25s, bottom 0.25s;
     position: relative;
     border-radius: 4px;
 }
@@ -72,6 +82,7 @@ a:hover, .pageLabel:hover {
     animation: fadeIn 1.5s;
     -webkit-animation: fadeIn 1.5s;
     -moz-animation: fadeIn 1.5s;
+    -o-animation: fadeIn 1.5s; 
 }
 
 #page1 > .greeting > .header {
@@ -129,6 +140,7 @@ a:hover, .pageLabel:hover {
     animation: sidebarSlideIn 0.5s;
     -webkit-animation: sidebarSlideIn 0.5s;
     -moz-animation: sidebarSlideIn 0.5s;
+    -o-animation: sidebarSlideIn 0.5s;
 }
 
 #funstuff {
@@ -155,6 +167,7 @@ a:hover, .pageLabel:hover {
     transition: opacity 0.25s, color 0.25s;
     -webkit-transition: opacity 0.25s, color 0.25s;
     -moz-transition: opacity 0.25s, color 0.25s;
+    -o-transition: opacity 0.25s, color 0.25s;
 }
 
 #funstuff:hover #dmTooltip {
@@ -175,6 +188,7 @@ a:hover, .pageLabel:hover {
     transition: margin 0.25s;
     -webkit-transition: margin 0.25s;
     -moz-transition: margin 0.25s;
+    -o-transition: margin 0.25s;
 }
 
 #translate {
@@ -191,6 +205,7 @@ a:hover, .pageLabel:hover {
     transition: margin 0.25s;
     -webkit-transition: margin 0.25s;
     -moz-transition: margin 0.25s;
+    -o-transition: margin 0.25s;
 }
 
 .separator {
@@ -269,8 +284,9 @@ a:hover, .pageLabel:hover {
          -webkit-animation: none;
          -moz-animation: none;
          transition: opacity 0.25s, background-color 1s, color 1s;
-         -webkit-transition: opacity 0.25s;
-         -moz-transition: opacity 0.25s;
+         -webkit-transition: opacity 0.25s, background-color 1s, color 1s;
+         -moz-transition: opacity 0.25s, background-color 1s, color 1s;
+         -o-transition: opacity 0.25s, background-color 1s, color 1s;
          padding: none;
      }
 
@@ -303,6 +319,9 @@ a:hover, .pageLabel:hover {
          justify-content: center;
          cursor: pointer;
          transition: background-color 1s, color 1s;
+         -moz-transition: background-color 1s, color 1s;
+         -webkit-transition: background-color 1s, color 1s;
+         -o-transition: background-color 1s, color 1s;
      }
 
      #menu {
@@ -323,6 +342,9 @@ a:hover, .pageLabel:hover {
         width: auto;
         margin-top: -2em;
         transition: margin-top 0.25s;
+        -moz-transition: margin-top 0.25s;
+        -webkit-transition: margin-top 0.25s;
+        -o-transition: margin-top 0.25s;
      }
 
      #funstuff {
