@@ -30,6 +30,7 @@ a {
 }
 
 a:hover, .pageLabel:hover {
+    transition: color 0.25s;
     text-decoration: underline;
 }
 
