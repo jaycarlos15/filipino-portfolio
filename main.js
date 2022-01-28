@@ -180,16 +180,18 @@ desktopWidth.addEventListener('change', function () {
 });
 
 function sidebarToggle() {
-    if (sidebarVisible == false) {
-        sidebarVisible = true;
-        sidebar.style.opacity = 1;
-        sidebar.style.zIndex = 1;
-        close.style.marginTop = 0;
-    } else {
-        sidebarVisible = false;
-        sidebar.style.opacity = 0;
-        sidebar.style.zIndex = -1;
-        close.style.marginTop = '-2em';
+    if (desktopWidth.matches == false) {
+        if (sidebarVisible == false) {
+            sidebarVisible = true;
+            sidebar.style.opacity = 1;
+            sidebar.style.zIndex = 1;
+            close.style.marginTop = 0;
+        } else {
+            sidebarVisible = false;
+            sidebar.style.opacity = 0;
+            sidebar.style.zIndex = -1;
+            close.style.marginTop = '-2em';
+        }
     }
 }
 
